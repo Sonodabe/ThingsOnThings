@@ -1,6 +1,7 @@
 class Node {
 public:
-    int data; 
     Node* next;
-    
+    int posX;
+    int posY;
+    int radius;
 };

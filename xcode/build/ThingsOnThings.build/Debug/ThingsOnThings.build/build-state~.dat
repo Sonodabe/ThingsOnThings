@@ -1,0 +1,232 @@
+TThingsOnThings
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Info.plist" Info.plist
+cCpResource CinderApp.icns ./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns
+cProcessPCH++ /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth ThingsOnThings_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004EED84FA00000000000000EE
+t1324188922
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Accelerate.framework/Accelerate
+c000000004E2F297A0000000000006500
+t1311713658
+s25856
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004E2F297B0000000000025E48
+t1311713659
+s155208
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioUnit.framework/AudioUnit
+c000000004E2F297B0000000000005FA8
+t1311713659
+s24488
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+c000000004E2F297C0000000000014894
+t1311713660
+s84116
+
+N/System/Library/Frameworks/Carbon.framework/Carbon
+c000000004E2DA6AF0000000000006530
+t1311614639
+s25904
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004E2DA6AF0000000000006560
+t1311614639
+s25952
+
+N/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c000000004F9D0514000000000007CED0
+t1335690516
+s511696
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c000000004F9D04D2000000000002E350
+t1335690450
+s189264
+
+N/System/Library/Frameworks/QTKit.framework/QTKit
+c000000004F9D072200000000004B7F60
+t1335691042
+s4947808
+
+N/System/Library/Frameworks/QuickTime.framework/QuickTime
+c000000004F9D069F000000000032B7E0
+t1335690911
+s3323872
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp
+c000000005058F6C20000000000000232
+t1348007618
+s562
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Info.plist
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/MacOS/ThingsOnThings
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/PkgInfo
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/Node.o
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThings.LinkFileList
+c000000005058F6C50000000000000157
+t1348007621
+s343
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o
+t2
+s0
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/CinderApp.icns
+c000000005052439C000000000001BEB5
+t1347568540
+s114357
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp
+c000000005058F67C00000000000001C6
+t1348007548
+s454
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/Node.cpp
+c00000000505246650000000000000006
+t1347569253
+s6
+
+N/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/ThingsOnThings_Prefix.pch
+c000000005052439C0000000000000093
+t1347568540
+s147
+i<Cocoa/Cocoa.h>
+
+N/var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth
+t2
+s0
+
+NInfo.plist
+c000000005052439C0000000000000354
+t1347568540
+s852
+
+CBuild AST from "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp"
+r0
+
+CBuild AST from "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp"
+r0
+
+CBuild AST from "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/Node.cpp"
+r0
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies29aeca452e09b641^043df8452e09b641^---0#1#0#--18"Check dependencies36"FCA57C4A-9FE3-499E-A4C4-DFE662E10E30-
+
+CCompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s369700422.719600
+e369700423.562956
+r1
+xCompileC
+x./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o
+x/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cppac58b8462e09b641^821c90472e09b641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/List.cpp0000000000000000^2750"CompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o List.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wc++0x-extensions -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -Wno-sign-conversion -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-generated-files.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-own-target-headers.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-all-target-headers.hmap" -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-project-headers.hmap" -iquote../../../../../../../../Applications/cinder/include -iquote../include "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug/include" -I../../../../../../../../Applications/cinder/boost "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources/i386" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources" "-F/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug" -include /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch -MMD -MT dependencies -MF "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.d" -c "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.cpp" -o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o"36"080F32CB-E226-4E2F-86A7-59F1A9CA5148-
+
+CCompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/Node.o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/Node.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s369700422.719032
+e369700426.017540
+r0
+xCompileC
+x./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o
+x/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp:3:
+o/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h:3:5: error: unknown type name 'Node' [1]
+o     Node* sentinel;
+o     ^
+o/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h:6:21: error: unknown type name 'Node' [1]
+o     void insertNode(Node* pointer, int data);
+o                     ^
+o2 errors generated.
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Compile /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp043db8462e09b641^9774044a2e09b641^-515"In file included from /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp:3:/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h:3:5: error: unknown type name 'Node' [1]     Node* sentinel;     ^/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h:6:21: error: unknown type name 'Node' [1]     void insertNode(Node* pointer, int data);                     ^2 errors generated.2(21%IDEActivityLogMessage2@24"Unknown type name 'Node'-369700425#136#130#2(36%IDEActivityLogHeaderInclusionMessage3@135"In file included from /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp:3:-369700425#0#136#-0#-23%DVTTextDocumentLocation4@119"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/src/ThingsOnThingsApp.cpp0000000000000000^2#18446744073709551615#2#18446744073709551615#18446744073709551615#0#---2@116"Unknown type name 'Node' in /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h-369700425#18446744073709551615#0#-0#-4@106"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/List.h0000000000000000^2#4#2#4#18446744073709551615#0#---2#-4@106"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/List.h0000000000000000^2#4#2#4#18446744073709551615#0#11"Parse Issue--2@24"Unknown type name 'Node'-369700425#294#131#2(3@135"In file included from /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp:3:-369700425#18446744073709551615#0#-0#-4@119"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/src/ThingsOnThingsApp.cpp0000000000000000^2#18446744073709551615#2#18446744073709551615#18446744073709551615#0#---2@116"Unknown type name 'Node' in /Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/List.h-369700425#18446744073709551615#0#-0#-4@106"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/List.h0000000000000000^5#20#5#20#18446744073709551615#0#---2#-4@106"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/List.h0000000000000000^5#20#5#20#18446744073709551615#0#11"Parse Issue--0#0#0#-19%DVTDocumentLocation5@128"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp0000000000000000^2829"CompileC ./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o ../src/ThingsOnThingsApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wc++0x-extensions -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -Wno-sign-conversion -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-generated-files.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-own-target-headers.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-all-target-headers.hmap" -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-project-headers.hmap" -iquote../../../../../../../../Applications/cinder/include -iquote../include "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug/include" -I../../../../../../../../Applications/cinder/boost "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources/i386" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources" "-F/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug" -include /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch -MMD -MT dependencies -MF "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.d" -c "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/../src/ThingsOnThingsApp.cpp" -o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/ThingsOnThingsApp.o"36"E1E5A6FC-0371-4ADB-9FB5-BFD98138AD1A-
+
+CCpResource CinderApp.icns ./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns
+s369700422.063380
+e369700422.066448
+r1
+xCpResource
+xCinderApp.icns
+x./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Copy ./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns655110462e09b641^640311462e09b641^---0#0#0#-19%DVTDocumentLocation2@166"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns00f44414deffdf42^531"CpResource CinderApp.icns ./build/Debug/ThingsOnThings.app/Contents/Resources/CinderApp.icns    cd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/CinderApp.icns" "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Resources"36"599DE592-B6D4-4179-A156-EF5707ED0D63-
+
+CLd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/MacOS/ThingsOnThings" normal i386
+r0
+
+CProcessInfoPlistFile "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Info.plist" Info.plist
+s369700422.026831
+e369700422.055327
+r1
+xProcessInfoPlistFile
+x/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Info.plist
+xInfo.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Process Info.plistea3d0d462e09b641^99470e462e09b641^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/Info.plist0000000000000000^540"ProcessInfoPlistFile ./build/Debug/ThingsOnThings.app/Contents/Info.plist Info.plist    cd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode"    builtin-infoPlistUtility Info.plist -genpkginfo "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/PkgInfo" -expandbuildsettings -platform macosx -o "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app/Contents/Info.plist"36"9DD309D9-BECD-42C5-8FE5-27145DE09188-
+
+CProcessPCH++ /Users/brandonsonoda/Library/Developer/Xcode/DerivedData/ThingsOnThings-bjgrrvjnrshbigceoeahijtwmqpz/Index/PrecompiledHeaders/ThingsOnThings_Prefix-cejbvvbwleosazakzxxyiwexbego_ast/ThingsOnThings_Prefix.pch.pth ThingsOnThings_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH++ /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth ThingsOnThings_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s369700422.074210
+e369700422.712240
+r1
+xProcessPCH++
+x/var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth
+xThingsOnThings_Prefix.pch
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Precompile ThingsOnThings_Prefix.pchd92413462e09b641^8254b6462e09b641^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/brandonsonoda/Documents/College/SemesterThree/CSE%20274/ThingsOnThings/xcode/ThingsOnThings_Prefix.pch0000000000000000^2721"ProcessPCH++ /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth ThingsOnThings_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wc++0x-extensions -isysroot /Developer/SDKs/MacOSX10.6.sdk -fasm-blocks -mmacosx-version-min=10.5 -gdwarf-2 -Wno-sign-conversion -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-generated-files.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-own-target-headers.hmap" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-all-target-headers.hmap" -iquote "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/ThingsOnThings-project-headers.hmap" -iquote../../../../../../../../Applications/cinder/include -iquote../include "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug/include" -I../../../../../../../../Applications/cinder/boost "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources/i386" "-I/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/ThingsOnThings.build/Debug/ThingsOnThings.build/DerivedSources" "-F/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/build/Debug" -c "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/ThingsOnThings_Prefix.pch" -o /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6v/y6c8z8691v3fhxbwjxbyn0qc0000gp/C/com.apple.Xcode.502/SharedPrecompiledHeaders/ThingsOnThings_Prefix-eoaszndoklseebdsorihsafvuusi/ThingsOnThings_Prefix.pch.d36"A385A3F3-0857-4D3A-AB22-8F7D705931CC-
+
+CTouch "/Users/brandonsonoda/Documents/College/SemesterThree/CSE 274/ThingsOnThings/xcode/./build/Debug/ThingsOnThings.app"
+r0
+
