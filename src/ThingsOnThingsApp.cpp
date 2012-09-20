@@ -1,7 +1,7 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
-#include "Node.h"
+#include "List.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -9,7 +9,7 @@ using namespace std;
 
 class ThingsOnThingsApp : public AppBasic {
   public:
-    Node* sentinel;
+    List* myList;
 	void setup();
 	void mouseDown( MouseEvent event );	
 	void update();
@@ -25,18 +25,9 @@ static const int appWidth = 800;
 static const int appHeight = 600;
 static const int textureSize = 1024;
 
-void insertNode(Node* prevNode, int posX, int posY, int radius);
-void display(Node* sentinel, uint8_t* data);
-bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius);
+void display(List* myList, uint8_t* data);
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats);
-//bool onAnyRing(int mouseX, int mouseY, Node* sentinel);
-Node* onThisRing(int mouseX, int mouseY, Node* sentinel);
-void moveToFront(Node* movee, Node* sentinel);
-void reverse(Node* sentinel);
 
-
-
-int ringThickness = 100;
 
 
 void ThingsOnThingsApp::prepareSettings(Settings* settings){
@@ -47,31 +38,32 @@ void ThingsOnThingsApp::prepareSettings(Settings* settings){
 void ThingsOnThingsApp::setup()
 { 
     mySurface = new Surface(textureSize, textureSize, false);
-    sentinel = new Node;
-    sentinel->next = sentinel;
-    sentinel->prev = sentinel;
-    insertNode(sentinel->next->next, appWidth/2, appHeight/2, 250);
-    insertNode(sentinel, appWidth/3, appHeight/2, 250);
-    insertNode(sentinel->next, 2*appWidth/3, appHeight/2, 250);
+    myList = new List;
+    myList->sentinel = new Node;
+    myList->sentinel->next = myList->sentinel;
+    myList->sentinel->prev = myList->sentinel;
+    Node* lastNode;
+    lastNode = myList->insertNode(myList->sentinel, appWidth/6, appHeight/2, appWidth/6);
+    lastNode = myList->insertNode(lastNode, 2*appWidth/6, appHeight/2, appWidth/6);
+    lastNode = myList->insertNode(lastNode, 3*appWidth/6, appHeight/2, appWidth/6);
+    lastNode = myList->insertNode(lastNode, 4*appWidth/6, appHeight/2, appWidth/6);
+    lastNode = myList->insertNode(lastNode, 5*appWidth/6, appHeight/2, appWidth/6);
 
-    
-
-         
 }
 
 void ThingsOnThingsApp::mouseDown( MouseEvent event )
 {
     int mouseX = event.getX();
     int mouseY = event.getY();
-    Node* clicked = onThisRing(mouseX, mouseY, sentinel);
-    if(clicked != NULL)
-        moveToFront(clicked, sentinel);
+    Node* clicked = myList->onThisRing(mouseX, mouseY);
+    if(clicked != 0)
+        myList->moveToFront(clicked);
 }
 
 void ThingsOnThingsApp::update()
 {
     uint8_t* data = (*mySurface).getData();    
-    display(sentinel, data);
+    display(myList, data);
 }
 
 void ThingsOnThingsApp::draw()
@@ -79,77 +71,15 @@ void ThingsOnThingsApp::draw()
     gl::draw(*mySurface);
 }
 
-//bool onAnyRing(int mouseX, int mouseY, Node* sentinel){
-//    bool on = false;
-//    Node* current = sentinel->next;
-//    while(current!=sentinel && !on){
-//        if(onRing(mouseX, mouseY, current->posX, current->posY, current->radius))
-//            on = true;
-//        current = current->next;
-//    }    
-//    return on;
-//}
 
-
-Node* onThisRing(int mouseX, int mouseY, Node* sentinel){
-    Node* current = sentinel->next;
-    while(current!=sentinel){
-        if(onRing(mouseX, mouseY, current->posX, current->posY, current->radius))
-            return current;
+void display(List* myList, uint8_t* data){
+    myList->reverse();
+    Node* current = myList->sentinel->next;
+    while(current!= myList->sentinel){
+        drawCircle(current->posX, current->posY, current->radius, data, current->color, current->ringThickness);
         current = current->next;
     }    
-    return NULL;
-}
-
-void insertNode(Node* prevNode, int posX, int posY, int radius){
-    Node* tempNode = new Node;
-    tempNode->next = prevNode->next;
-    tempNode->prev = prevNode;
-    prevNode->next = tempNode;
-    tempNode->next->prev = tempNode;
-    tempNode->posX = posX;
-    tempNode->posY = posY;
-    tempNode->radius = radius;
-    tempNode->color = Color8u(rand()%256, rand()%256, rand()%256);
-}
-
-void reverse(Node* sentinel){
-    Node* cur = sentinel;
-    Node* temp;
-    
-    do {
-        temp = cur->prev;
-        cur->prev = cur->next;
-        cur->next = temp;
-        cur = cur->prev;
-    }while(cur != sentinel);
-}
-
-void display(Node* sentinel, uint8_t* data){
-    reverse(sentinel);
-    Node* current = sentinel->next;
-    while(current!=sentinel){
-        drawCircle(current->posX, current->posY, current->radius, data, current->color, ringThickness);
-        current = current->next;
-    }    
-    reverse(sentinel);
-}
-
-bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius){
-    int distance = sqrt((mouseX-circleX)*(mouseX-circleX)+(mouseY-circleY)*(mouseY-circleY));
-    return(distance <= radius  && distance >= radius-ringThickness);
-    
-}
-
-void moveToFront(Node* movee, Node* sentinel){
-    movee->prev->next = movee->next;
-    movee->next->prev = movee->prev;
-    sentinel->next->prev = movee;
-    movee->next = sentinel->next;
-    sentinel->next = sentinel->next->prev;
-    movee->prev = sentinel;
-    
-    
+    myList->reverse();
 }
 
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats){
