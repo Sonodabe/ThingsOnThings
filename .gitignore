@@ -5,3 +5,7 @@ profile
 *~.nib
 DerivedData/
 build/
+
+xcode/build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.d
+
+xcode/build/ThingsOnThings.build/Debug/ThingsOnThings.build/Objects-normal/i386/List.o
