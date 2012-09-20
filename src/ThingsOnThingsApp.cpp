@@ -31,6 +31,7 @@ bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius);
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats);
 //bool onAnyRing(int mouseX, int mouseY, Node* sentinel);
 Node* onThisRing(int mouseX, int mouseY, Node* sentinel);
+void moveToFront(Node* movee, Node* sentinel);
 void reverse(Node* sentinel);
 
 
@@ -49,8 +50,10 @@ void ThingsOnThingsApp::setup()
     sentinel = new Node;
     sentinel->next = sentinel;
     sentinel->prev = sentinel;
+    insertNode(sentinel->next->next, appWidth/2, appHeight/2, 250);
     insertNode(sentinel, appWidth/3, appHeight/2, 250);
     insertNode(sentinel->next, 2*appWidth/3, appHeight/2, 250);
+
     
 
          
@@ -62,7 +65,7 @@ void ThingsOnThingsApp::mouseDown( MouseEvent event )
     int mouseY = event.getY();
     Node* clicked = onThisRing(mouseX, mouseY, sentinel);
     if(clicked != NULL)
-        clicked->color = Color8u(rand()%256, rand()%256, rand()%256);
+        moveToFront(clicked, sentinel);
 }
 
 void ThingsOnThingsApp::update()
@@ -107,7 +110,7 @@ void insertNode(Node* prevNode, int posX, int posY, int radius){
     tempNode->posX = posX;
     tempNode->posY = posY;
     tempNode->radius = radius;
-    tempNode->color = Color8u(255, 0, 100);
+    tempNode->color = Color8u(rand()%256, rand()%256, rand()%256);
 }
 
 void reverse(Node* sentinel){
@@ -138,8 +141,16 @@ bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius){
     
 }
 
-
-
+void moveToFront(Node* movee, Node* sentinel){
+    movee->prev->next = movee->next;
+    movee->next->prev = movee->prev;
+    sentinel->next->prev = movee;
+    movee->next = sentinel->next;
+    sentinel->next = sentinel->next->prev;
+    movee->prev = sentinel;
+    
+    
+}
 
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats){
     if(repeats<=0)
