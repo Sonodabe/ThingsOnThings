@@ -31,9 +31,11 @@ void randomizeColor();
 bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius);
 void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats);
 bool onAnyRing(int mouseX, int mouseY, Node* sentinel);
+int absoluteValue(int num);
 int red = 255;
 int green = 0;
 int blue = 100;
+int ringThickness = 100;
 
 
 void ThingsOnThingsApp::prepareSettings(Settings* settings){
@@ -43,11 +45,11 @@ void ThingsOnThingsApp::prepareSettings(Settings* settings){
 
 void ThingsOnThingsApp::setup()
 { 
-    mySurface = new Surface(appWidth, appHeight, false);
+    mySurface = new Surface(textureSize, textureSize, false);
     sentinel = new Node;
     sentinel->next = sentinel;
-    insertNode(sentinel, 600, 190, 100);
-    insertNode(sentinel->next, 400, 350, 100);
+    insertNode(sentinel, appWidth/3, appHeight/2, 250);
+    insertNode(sentinel->next, 2*appWidth/3, appHeight/2, 250);
     
 
          
@@ -95,16 +97,14 @@ void insertNode(Node* prevNode, int posX, int posY, int radius){
 void display(Node* sentinel, uint8_t* data){
     Node* current = sentinel->next;
     while(current!=sentinel){
-        drawCircle(current->posX, current->posY, current->radius, data, current->radius);
+        drawCircle(current->posX, current->posY, current->radius, data, ringThickness);
         current = current->next;
     }    
 }
 
 bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius){
-    int distX, distY;
-    distX = abs(mouseX-circleX);
-    distY = abs(mouseY-circleY);
-    return(distX <= radius && distY <= radius);
+    int distance = sqrt((mouseX-circleX)*(mouseX-circleX)+(mouseY-circleY)*(mouseY-circleY));
+    return(distance <= radius  && distance >= radius-ringThickness);
     
 }
 
@@ -112,6 +112,12 @@ void randomizeColor(){
     red = rand()%256;
     green = rand()%256;
     blue = rand()%256;
+}
+
+int absoluteValue(int num){
+    if(num>0)
+        return num;
+    return -num;
 }
 
 void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats){
@@ -125,14 +131,14 @@ void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats){
     while(angle < 6.28){
         tempX = posX+radius*sin(angle+3.14/2);
         tempY = posY+radius*sin(angle);
-        index = 3*(tempY*appWidth+tempX);
+        index = 3*(tempY*textureSize+tempX);
         
-        if(index>=0 && index <appHeight*appWidth*3){
+        if(index>=0 && index <appHeight*textureSize*3){
             data[index] = red;
             data[index+1] = green;
             data[index+2] = blue;
         }  
-        angle+=.025;
+        angle+=.01;
     }
     drawCircle(posX, posY, radius-1, data, repeats-1);
 }
