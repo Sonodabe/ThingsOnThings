@@ -27,14 +27,14 @@ static const int textureSize = 1024;
 
 void insertNode(Node* prevNode, int posX, int posY, int radius);
 void display(Node* sentinel, uint8_t* data);
-void randomizeColor();
 bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius);
-void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats);
-bool onAnyRing(int mouseX, int mouseY, Node* sentinel);
-int absoluteValue(int num);
-int red = 255;
-int green = 0;
-int blue = 100;
+void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats);
+//bool onAnyRing(int mouseX, int mouseY, Node* sentinel);
+Node* onThisRing(int mouseX, int mouseY, Node* sentinel);
+void reverse(Node* sentinel);
+
+
+
 int ringThickness = 100;
 
 
@@ -48,6 +48,7 @@ void ThingsOnThingsApp::setup()
     mySurface = new Surface(textureSize, textureSize, false);
     sentinel = new Node;
     sentinel->next = sentinel;
+    sentinel->prev = sentinel;
     insertNode(sentinel, appWidth/3, appHeight/2, 250);
     insertNode(sentinel->next, 2*appWidth/3, appHeight/2, 250);
     
@@ -59,8 +60,9 @@ void ThingsOnThingsApp::mouseDown( MouseEvent event )
 {
     int mouseX = event.getX();
     int mouseY = event.getY();
-    if(onAnyRing(mouseX, mouseY, sentinel))
-        randomizeColor();
+    Node* clicked = onThisRing(mouseX, mouseY, sentinel);
+    if(clicked != NULL)
+        clicked->color = Color8u(rand()%256, rand()%256, rand()%256);
 }
 
 void ThingsOnThingsApp::update()
@@ -74,32 +76,60 @@ void ThingsOnThingsApp::draw()
     gl::draw(*mySurface);
 }
 
-bool onAnyRing(int mouseX, int mouseY, Node* sentinel){
-    bool on = false;
+//bool onAnyRing(int mouseX, int mouseY, Node* sentinel){
+//    bool on = false;
+//    Node* current = sentinel->next;
+//    while(current!=sentinel && !on){
+//        if(onRing(mouseX, mouseY, current->posX, current->posY, current->radius))
+//            on = true;
+//        current = current->next;
+//    }    
+//    return on;
+//}
+
+
+Node* onThisRing(int mouseX, int mouseY, Node* sentinel){
     Node* current = sentinel->next;
-    while(current!=sentinel && !on){
+    while(current!=sentinel){
         if(onRing(mouseX, mouseY, current->posX, current->posY, current->radius))
-            on = true;
+            return current;
         current = current->next;
     }    
-    return on;
+    return NULL;
 }
 
 void insertNode(Node* prevNode, int posX, int posY, int radius){
     Node* tempNode = new Node;
     tempNode->next = prevNode->next;
+    tempNode->prev = prevNode;
     prevNode->next = tempNode;
+    tempNode->next->prev = tempNode;
     tempNode->posX = posX;
     tempNode->posY = posY;
     tempNode->radius = radius;
+    tempNode->color = Color8u(255, 0, 100);
+}
+
+void reverse(Node* sentinel){
+    Node* cur = sentinel;
+    Node* temp;
+    
+    do {
+        temp = cur->prev;
+        cur->prev = cur->next;
+        cur->next = temp;
+        cur = cur->prev;
+    }while(cur != sentinel);
 }
 
 void display(Node* sentinel, uint8_t* data){
+    reverse(sentinel);
     Node* current = sentinel->next;
     while(current!=sentinel){
-        drawCircle(current->posX, current->posY, current->radius, data, ringThickness);
+        drawCircle(current->posX, current->posY, current->radius, data, current->color, ringThickness);
         current = current->next;
     }    
+    reverse(sentinel);
 }
 
 bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius){
@@ -108,19 +138,10 @@ bool onRing(int mouseX, int mouseY, int circleX, int circleY, int radius){
     
 }
 
-void randomizeColor(){
-    red = rand()%256;
-    green = rand()%256;
-    blue = rand()%256;
-}
 
-int absoluteValue(int num){
-    if(num>0)
-        return num;
-    return -num;
-}
 
-void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats){
+
+void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats){
     if(repeats<=0)
         return;
     int tempX, tempY;
@@ -128,19 +149,19 @@ void drawCircle(int posX, int posY, int radius, uint8_t* data, int repeats){
     
     int index;
     
-    while(angle < 6.28){
+    while(angle <= 6.3){
         tempX = posX+radius*sin(angle+3.14/2);
         tempY = posY+radius*sin(angle);
         index = 3*(tempY*textureSize+tempX);
         
         if(index>=0 && index <appHeight*textureSize*3){
-            data[index] = red;
-            data[index+1] = green;
-            data[index+2] = blue;
+            data[index] = color.r;
+            data[index+1] = color.g;
+            data[index+2] = color.b;
         }  
-        angle+=.01;
+        angle+=.001;
     }
-    drawCircle(posX, posY, radius-1, data, repeats-1);
+    drawCircle(posX, posY, radius-1, data, color, repeats-1);
 }
 
 CINDER_APP_BASIC( ThingsOnThingsApp, RendererGl )
