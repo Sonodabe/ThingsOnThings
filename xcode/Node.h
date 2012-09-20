@@ -13,6 +13,4 @@ public:
     int radius;
     cinder::Color8u color;
     void randomizeColor();
-    int ringThickness;
-
 };

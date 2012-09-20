@@ -21,7 +21,7 @@ void List::reverse(){
     }while(cur != sentinel);
 }
 
-Node* List::insertNode(Node* prevNode, int posX, int posY, int radius){
+Node* List::insertNode(Node* prevNode, int posX, int posY){
     Node* tempNode = new Node;
     tempNode->next = prevNode->next;
     tempNode->prev = prevNode;
@@ -29,19 +29,27 @@ Node* List::insertNode(Node* prevNode, int posX, int posY, int radius){
     tempNode->next->prev = tempNode;
     tempNode->posX = posX;
     tempNode->posY = posY;
-    tempNode->radius = radius;
+    tempNode->radius = sentinel->radius;
     tempNode->color = cinder::Color8u(rand()%256, rand()%256, rand()%256);
-    tempNode->ringThickness = 50;
     
     return tempNode;
 }
 
+void List::resize(){
+    Node* current = sentinel->next;
+    double factor = 1;
+    while(current!=sentinel){
+        current->radius = (int)(factor*sentinel->radius);
+        factor*=.9;
+        current = current->next;
+    }    
+}
 
 bool List::onRing(int mouseX, int mouseY, Node* ring){
     int deltaX = mouseX-ring->posX;
     int deltaY = mouseY-ring->posY;
     int distance = sqrt(deltaX*deltaX+deltaY*deltaY);
-    return(distance <= ring->radius  && distance >= ring->radius-ring->ringThickness);
+    return(distance <= ring->radius  && distance >= 2*ring->radius/3);
 }
 
 Node* List::onThisRing(int mouseX, int mouseY){

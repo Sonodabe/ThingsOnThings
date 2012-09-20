@@ -26,6 +26,7 @@ static const int appHeight = 600;
 static const int textureSize = 1024;
 
 void display(List* myList, uint8_t* data);
+void clearScreen(uint8_t* data);
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats);
 
 
@@ -42,12 +43,14 @@ void ThingsOnThingsApp::setup()
     myList->sentinel = new Node;
     myList->sentinel->next = myList->sentinel;
     myList->sentinel->prev = myList->sentinel;
+    /* The sentinel radius will be the max radius */
+    myList->sentinel->radius = appWidth/6;
     Node* lastNode;
-    lastNode = myList->insertNode(myList->sentinel, appWidth/6, appHeight/2, appWidth/6);
-    lastNode = myList->insertNode(lastNode, 2*appWidth/6, appHeight/2, appWidth/6);
-    lastNode = myList->insertNode(lastNode, 3*appWidth/6, appHeight/2, appWidth/6);
-    lastNode = myList->insertNode(lastNode, 4*appWidth/6, appHeight/2, appWidth/6);
-    lastNode = myList->insertNode(lastNode, 5*appWidth/6, appHeight/2, appWidth/6);
+    lastNode = myList->insertNode(myList->sentinel, appWidth/6, appHeight/2);
+    lastNode = myList->insertNode(lastNode, 2*appWidth/6, appHeight/2);
+    lastNode = myList->insertNode(lastNode, 3*appWidth/6, appHeight/2);
+    lastNode = myList->insertNode(lastNode, 4*appWidth/6, appHeight/2);
+    lastNode = myList->insertNode(lastNode, 5*appWidth/6, appHeight/2);
 
 }
 
@@ -62,8 +65,10 @@ void ThingsOnThingsApp::mouseDown( MouseEvent event )
 
 void ThingsOnThingsApp::update()
 {
-    uint8_t* data = (*mySurface).getData();    
+    uint8_t* data = (*mySurface).getData();
+    clearScreen(data);
     display(myList, data);
+    myList->resize();
 }
 
 void ThingsOnThingsApp::draw()
@@ -76,10 +81,16 @@ void display(List* myList, uint8_t* data){
     myList->reverse();
     Node* current = myList->sentinel->next;
     while(current!= myList->sentinel){
-        drawCircle(current->posX, current->posY, current->radius, data, current->color, current->ringThickness);
+        drawCircle(current->posX, current->posY, current->radius, data, current->color, current->radius/3);
         current = current->next;
     }    
     myList->reverse();
+}
+
+void clearScreen(uint8_t* data){
+    for(int i = 0; i<textureSize*appWidth*3; i++)
+        data[i] = 0;
+
 }
 
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats){
