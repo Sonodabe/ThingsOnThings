@@ -42,7 +42,7 @@ void List::resize(){
     double factor = 1;
     while(current!=sentinel){
         current->radius = (int)(factor*sentinel->radius);
-        factor*=.9;
+        factor*=.85;
         current = current->next;
     }    
 }

@@ -50,11 +50,12 @@ void ThingsOnThingsApp::setup()
 
     Node* lastNode;
     lastNode = myList->insertNode(myList->sentinel, appWidth/4, appHeight/3);
-    lastNode = myList->insertNode(lastNode, 2*appWidth/4, appHeight/3);
-    lastNode = myList->insertNode(lastNode, 3*appWidth/4, appHeight/3);
     lastNode = myList->insertNode(lastNode, 3*appWidth/4, 2*appHeight/3);
-    lastNode = myList->insertNode(lastNode, 2*appWidth/4, 2*appHeight/3);
+    lastNode = myList->insertNode(lastNode, 3*appWidth/4, appHeight/3);
     lastNode = myList->insertNode(lastNode, appWidth/4, 2*appHeight/3);
+    lastNode = myList->insertNode(lastNode, appWidth/2, 2*appHeight/3);
+    lastNode = myList->insertNode(lastNode, appWidth/2, appHeight/3);
+
 }
 
 void ThingsOnThingsApp::mouseDown( MouseEvent event )
@@ -84,7 +85,7 @@ void ThingsOnThingsApp::update()
     uint8_t* data = (*mySurface).getData();
     clearScreen(data);
     myList->resize();
-    myList->moveAll(appWidth, appHeight);
+    //myList->moveAll(appWidth, appHeight);
     display(myList, data);
 }
 
