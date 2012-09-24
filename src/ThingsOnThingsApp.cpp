@@ -1,4 +1,3 @@
-#include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "List.h"
@@ -12,6 +11,7 @@ class ThingsOnThingsApp : public AppBasic {
     List* myList;
 	void setup();
 	void mouseDown( MouseEvent event );	
+    void keyDown( KeyEvent event);
 	void update();
 	void draw();
     void prepareSettings(Settings* settings);
@@ -21,7 +21,7 @@ private:
 };
 
 //Screen dimensions
-static const int appWidth = 800;
+static const int appWidth = 600;
 static const int appHeight = 600;
 static const int textureSize = 1024;
 
@@ -43,15 +43,18 @@ void ThingsOnThingsApp::setup()
     myList->sentinel = new Node;
     myList->sentinel->next = myList->sentinel;
     myList->sentinel->prev = myList->sentinel;
-    /* The sentinel radius will be the max radius */
+    /* The sentinel radius will be the max radius*/
     myList->sentinel->radius = appWidth/6;
-    Node* lastNode;
-    lastNode = myList->insertNode(myList->sentinel, appWidth/6, appHeight/2);
-    lastNode = myList->insertNode(lastNode, 2*appWidth/6, appHeight/2);
-    lastNode = myList->insertNode(lastNode, 3*appWidth/6, appHeight/2);
-    lastNode = myList->insertNode(lastNode, 4*appWidth/6, appHeight/2);
-    lastNode = myList->insertNode(lastNode, 5*appWidth/6, appHeight/2);
+    myList->sentinel->posX = appWidth/2;
+    myList->sentinel->posY = appHeight/2;
 
+    Node* lastNode;
+    lastNode = myList->insertNode(myList->sentinel, appWidth/4, appHeight/3);
+    lastNode = myList->insertNode(lastNode, 2*appWidth/4, appHeight/3);
+    lastNode = myList->insertNode(lastNode, 3*appWidth/4, appHeight/3);
+    lastNode = myList->insertNode(lastNode, 3*appWidth/4, 2*appHeight/3);
+    lastNode = myList->insertNode(lastNode, 2*appWidth/4, 2*appHeight/3);
+    lastNode = myList->insertNode(lastNode, appWidth/4, 2*appHeight/3);
 }
 
 void ThingsOnThingsApp::mouseDown( MouseEvent event )
@@ -63,12 +66,26 @@ void ThingsOnThingsApp::mouseDown( MouseEvent event )
         myList->moveToFront(clicked);
 }
 
+void ThingsOnThingsApp::keyDown( KeyEvent event ){
+    int code = event.getCode();
+    int keyChar = event.getChar();
+    if(code == KeyEvent::KEY_SPACE){
+        myList->reverse();
+    } else {
+        if(keyChar== '?'){
+            myList->reverse();
+        }
+    }
+    
+}
+
 void ThingsOnThingsApp::update()
 {
     uint8_t* data = (*mySurface).getData();
     clearScreen(data);
-    display(myList, data);
     myList->resize();
+    myList->moveAll(appWidth, appHeight);
+    display(myList, data);
 }
 
 void ThingsOnThingsApp::draw()
@@ -89,7 +106,7 @@ void display(List* myList, uint8_t* data){
 
 void clearScreen(uint8_t* data){
     for(int i = 0; i<textureSize*appWidth*3; i++)
-        data[i] = 0;
+        data[i] = 30;
 
 }
 
@@ -111,7 +128,7 @@ void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, in
             data[index+1] = color.g;
             data[index+2] = color.b;
         }  
-        angle+=.001;
+        angle+=.01;
     }
     drawCircle(posX, posY, radius-1, data, color, repeats-1);
 }

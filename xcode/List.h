@@ -8,6 +8,7 @@ public:
     Node* insertNode(Node* prevNode, int posX, int posY);
     Node* onThisRing(int mouseX, int mouseY);
     void resize();
+    void moveAll(int width, int height);
 private:
     bool onRing(int mouseX, int mouseY, Node* ring);
 };

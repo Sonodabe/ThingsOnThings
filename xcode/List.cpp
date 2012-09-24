@@ -30,7 +30,9 @@ Node* List::insertNode(Node* prevNode, int posX, int posY){
     tempNode->posX = posX;
     tempNode->posY = posY;
     tempNode->radius = sentinel->radius;
-    tempNode->color = cinder::Color8u(rand()%256, rand()%256, rand()%256);
+    tempNode->color = cinder::Color8u(rand()%128+128, rand()%256, rand()%200+56);
+    tempNode->speedX = rand()%2+1;
+    tempNode->speedY = rand()%2+1;
     
     return tempNode;
 }
@@ -43,6 +45,14 @@ void List::resize(){
         factor*=.9;
         current = current->next;
     }    
+}
+
+void List::moveAll(int width, int height){
+    Node* current = sentinel->next;
+    while(current!=sentinel){
+        current->move(width, height);
+        current = current->next;
+    }  
 }
 
 bool List::onRing(int mouseX, int mouseY, Node* ring){
