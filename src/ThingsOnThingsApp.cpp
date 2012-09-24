@@ -1,4 +1,20 @@
+//Brandon Sonoda
+//Homework 2: things on things on things on things
+
+
 #include "ThingsOnThingsApp.h"
+
+/*
+ Requirements met:
+    A: node, list class structure
+    C: mousedown()
+    D: myList->moveAll();
+    E: Press spacebar
+    random thought: p stops motion
+    H: myList->resize();
+    
+    K: myList->crazyInsideColor();
+ */
 
 //Screen dimensions
 static const int appWidth = 750;
