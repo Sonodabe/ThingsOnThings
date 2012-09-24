@@ -30,7 +30,7 @@ Node* List::insertNode(Node* prevNode, int posX, int posY){
     tempNode->posX = posX;
     tempNode->posY = posY;
     tempNode->radius = sentinel->radius;
-    tempNode->color = cinder::Color8u(rand()%128+128, rand()%256, rand()%200+56);
+    tempNode->color = cinder::Color8u(rand()%156+100, 0, rand()%100+156);
     tempNode->speedX = rand()%2+1;
     tempNode->speedY = rand()%2+1;
     
@@ -42,9 +42,23 @@ void List::resize(){
     double factor = 1;
     while(current!=sentinel){
         current->radius = (int)(factor*sentinel->radius);
-        factor*=.85;
+        factor*=.75;
         current = current->next;
     }    
+}
+
+void List::crazyInsideColor(){
+    Node* current = sentinel->next;
+    while(current!=sentinel){
+        Node* temp = sentinel->next;
+        while(temp!=sentinel){
+            if(current->inside(temp->posX+temp->radius, temp->posY+temp->radius) &&
+               current->inside(temp->posX-temp->radius, temp->posY-temp->radius))
+                temp->crazyColor();
+            temp = temp->next;
+        } 
+        current = current->next;
+    }
 }
 
 void List::moveAll(int width, int height){
@@ -55,17 +69,10 @@ void List::moveAll(int width, int height){
     }  
 }
 
-bool List::onRing(int mouseX, int mouseY, Node* ring){
-    int deltaX = mouseX-ring->posX;
-    int deltaY = mouseY-ring->posY;
-    int distance = sqrt(deltaX*deltaX+deltaY*deltaY);
-    return(distance <= ring->radius  && distance >= 2*ring->radius/3);
-}
-
 Node* List::onThisRing(int mouseX, int mouseY){
     Node* current = sentinel->next;
     while(current!=sentinel){
-        if(onRing(mouseX, mouseY, current))
+        if(current->onRing(mouseX, mouseY))
             return current;
         current = current->next;
     }    

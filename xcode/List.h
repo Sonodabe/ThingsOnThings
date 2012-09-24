@@ -45,16 +45,10 @@ public:
      * @param height The maximum y coordinate that these rings will stay within
      **/
     void moveAll(int width, int height);
-private:
+    
     /**
-     * Tells you if a specified point is on a particular ring
-     *
-     * @param mouseX The x coordinate of the point in question
-     * @param mouseY The y coordinate of the point in question
-     * @param ring This is the ring that you are currently checking
-     *
-     * @return <code>true</code> if the coordinate falls on the ring, <code>false</code> otherwise.
+     * Goes through all of the nodes and if one ring is completely inside of another it randomly changes color
      **/
-    bool onRing(int mouseX, int mouseY, Node* ring);
-    void bounceNext();
+    void crazyInsideColor();
+    
 };

@@ -1,28 +1,8 @@
-#include "cinder/gl/gl.h"
-#include "cinder/gl/Texture.h"
-#include "List.h"
-
-using namespace ci;
-using namespace ci::app;
-using namespace std;
-
-class ThingsOnThingsApp : public AppBasic {
-  public:
-    List* myList;
-	void setup();
-	void mouseDown( MouseEvent event );	
-    void keyDown( KeyEvent event);
-	void update();
-	void draw();
-    void prepareSettings(Settings* settings);
-    
-private: 
-    Surface* mySurface;
-};
+#include "ThingsOnThingsApp.h"
 
 //Screen dimensions
-static const int appWidth = 600;
-static const int appHeight = 600;
+static const int appWidth = 750;
+static const int appHeight = 750;
 static const int textureSize = 1024;
 
 void display(List* myList, uint8_t* data);
@@ -38,6 +18,7 @@ void ThingsOnThingsApp::prepareSettings(Settings* settings){
 
 void ThingsOnThingsApp::setup()
 { 
+    run = true;
     mySurface = new Surface(textureSize, textureSize, false);
     myList = new List;
     myList->sentinel = new Node;
@@ -73,8 +54,8 @@ void ThingsOnThingsApp::keyDown( KeyEvent event ){
     if(code == KeyEvent::KEY_SPACE){
         myList->reverse();
     } else {
-        if(keyChar== '?'){
-            myList->reverse();
+        if(keyChar == 'P' || keyChar == 'p'){
+            run = !run;
         }
     }
     
@@ -85,7 +66,10 @@ void ThingsOnThingsApp::update()
     uint8_t* data = (*mySurface).getData();
     clearScreen(data);
     myList->resize();
-    //myList->moveAll(appWidth, appHeight);
+    if(run){
+        myList->moveAll(appWidth, appHeight);
+    }
+    myList->crazyInsideColor();
     display(myList, data);
 }
 
