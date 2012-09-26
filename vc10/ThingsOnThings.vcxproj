@@ -47,7 +47,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\..\include;..\..\..\cinder_0.8.4_vc2010\include;..\..\..\cinder_0.8.4_vc2010\boost..\..\..\..\..\..\Applications\cinder\include;..\..\..\..\..\..\..\..\Applications\cinder\boost</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\..\cinder_0.8.4_vc2010\include;..\..\..\cinder_0.8.4_vc2010\boost</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -105,12 +105,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\ThingsOnThingsApp.cpp" />
+    <ClCompile Include="..\xcode\List.cpp" />
+    <ClCompile Include="..\xcode\Node.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\List.h" />
+    <ClInclude Include="..\include\Node.h" />
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\include\ThingsOnThingsApp.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\include\ThingsOnThings_Prefix.pch" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

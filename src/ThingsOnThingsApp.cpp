@@ -110,7 +110,7 @@ void clearScreen(uint8_t* data){
         data[i] = 30;
 
 }
-
+//Sam: what is repeats for?
 void drawCircle(int posX, int posY, int radius, uint8_t* data, Color8u color, int repeats){
     if(repeats<=0)
         return;

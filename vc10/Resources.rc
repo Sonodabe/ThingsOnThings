@@ -1,5 +1,5 @@
-#include "cinder/CinderResources.h"
-
+//#include "cinder/CinderResources.h"
+//Sam here, I commented this out cause it wouldn't run with it in the code...
 ID ICON "cinder_app_icon.ico"
 
 //RES_MY_RESOURCE

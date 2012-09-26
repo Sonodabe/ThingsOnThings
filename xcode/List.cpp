@@ -1,12 +1,12 @@
 #include "List.h"
-
-void List::moveToFront(Node* movee){
-    movee->prev->next = movee->next;
-    movee->next->prev = movee->prev;
-    sentinel->next->prev = movee;
-    movee->next = sentinel->next;
+//Sam: movee isn't a good variable name
+void List::moveToFront(Node* current){
+    current->prev->next = current->next;
+    current->next->prev = current->prev;
+    sentinel->next->prev = current;
+    current->next = sentinel->next;
     sentinel->next = sentinel->next->prev;
-    movee->prev = sentinel;
+    current->prev = sentinel;
 }
 
 void List::reverse(){
@@ -30,7 +30,10 @@ Node* List::insertNode(Node* prevNode, int posX, int posY){
     tempNode->posX = posX;
     tempNode->posY = posY;
     tempNode->radius = sentinel->radius;
-    tempNode->color = cinder::Color8u(rand()%156+100, 0, rand()%100+156);
+	// Sam: played with the colors some...was %156 and %100. 
+	// Wasn't sure if there was a reason behind it or not. 
+	// Just changed starting colors
+    tempNode->color = cinder::Color8u(rand()%199+100, 0, rand()%89+156);
     tempNode->speedX = rand()%2+1;
     tempNode->speedY = rand()%2+1;
     
@@ -47,11 +50,14 @@ void List::resize(){
     }    
 }
 
+
 void List::crazyInsideColor(){
     Node* current = sentinel->next;
     while(current!=sentinel){
         Node* temp = sentinel->next;
         while(temp!=sentinel){
+			//Sam: I tried to follow what you did here to no avail...
+			// but it works. Comment more maybe?
             if(current->inside(temp->posX+temp->radius, temp->posY+temp->radius) &&
                current->inside(temp->posX-temp->radius, temp->posY-temp->radius))
                 temp->crazyColor();
@@ -68,6 +74,7 @@ void List::moveAll(int width, int height){
         current = current->next;
     }  
 }
+
 
 Node* List::onThisRing(int mouseX, int mouseY){
     Node* current = sentinel->next;

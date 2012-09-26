@@ -1,2 +1,11 @@
-﻿  ThingsOnThingsApp.cpp
-c:\users\user\downloads\cinder\cinder\cinder_0.8.4_vc2010\include\cinder\cinder.h(25): fatal error C1083: Cannot open include file: 'boost/cstdint.hpp': No such file or directory
+﻿  Node.cpp
+c:\users\user\downloads\cinder\cinder\cse 274\thingsonthings\xcode\node.cpp(46): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+c:\users\user\downloads\cinder\cinder\cse 274\thingsonthings\xcode\node.cpp(58): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+  List.cpp
+  Generating Code...
+  Compiling...
+  ThingsOnThingsApp.cpp
+c:\users\user\downloads\cinder\cinder\cse 274\thingsonthings\src\thingsonthingsapp.cpp(123): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\users\user\downloads\cinder\cinder\cse 274\thingsonthings\src\thingsonthingsapp.cpp(124): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  ThingsOnThings.vcxproj -> C:\Users\user\Downloads\Cinder\cinder\CSE 274\ThingsOnThings\vc10\Debug\ThingsOnThings.exe
