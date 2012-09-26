@@ -1,0 +1,2 @@
+﻿  ThingsOnThingsApp.cpp
+c:\users\user\downloads\cinder\cinder\cinder_0.8.4_vc2010\include\cinder\cinder.h(25): fatal error C1083: Cannot open include file: 'boost/cstdint.hpp': No such file or directory
